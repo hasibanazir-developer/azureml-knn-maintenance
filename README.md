@@ -34,6 +34,7 @@ Managed online endpoint knn-maint-hasiba0045c, deployment "blue", VM Standard_DS
 - The first no-code MLflow deployment crashed (container exit code 3) because the serving environment used different package versions from training. Fixed with a custom environment pinned to the training versions and a small scoring script (deployment/score.py).
 - Sample request: deployment/sample-request.json
 - Test script: deployment/test_endpoint.py
+- Screenshot 8.4 (Consume tab) not included: the endpoint was deleted right after testing to save credit. The REST call that uses the same URL and key is shown in 8.5_rest_test.png.
 
 ## What I learned
 KNN needs scaled features because it is distance based. Accuracy is misleading on imbalanced data, so recall, F1 and AUC matter more. AutoML failed on sparse categorical data with KNN, which I fixed with ordinal encoding. The metric you optimise (F1 vs AUC) changes the chosen K a lot. Training and deployment environments must use the same package versions. Azure resources cost money, so idle shutdown and deleting resources is essential.
