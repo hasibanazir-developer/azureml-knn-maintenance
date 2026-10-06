@@ -1,0 +1,11 @@
+# Automated ML results (KNN only)
+- Job name: knn-automl-hasiba0045-v2
+- First run failed: the categorical `type` column produced sparse data, which KNN does not support. Fixed by encoding type as L=0, M=1, H=2.
+- Best algorithm: SparseNormalizer, KNN
+- n_neighbors: 75
+- weights: distance (metric l2)
+- AUC weighted: 0.923
+- Accuracy: 0.969
+- Balanced accuracy (recall macro): 0.555
+- F1 macro: 0.590
+- Observation: AutoML optimised AUC and chose K=75, while my notebook optimised F1 and chose K=1. The optimisation metric decides the model.
